@@ -198,8 +198,11 @@ svg {
 }
 .hero {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100svh - 72px);
   overflow: hidden;
-  padding-top: 95px;
+  padding-top: 42px;
   background: radial-gradient(
       circle at 73% 38%,
       rgba(54, 90, 76, 0.17),
@@ -221,13 +224,14 @@ svg {
 .hero-grid {
   position: relative;
   display: grid;
+  flex: 1;
   grid-template-columns: minmax(0, 1.13fr) minmax(0, 0.87fr);
   align-items: center;
   gap: 70px;
   min-height: 520px;
 }
 .hero-content {
-  padding: 15px 0 62px;
+  padding: 10px 0 26px;
 }
 .hero h1 {
   margin: 28px 0 25px;
@@ -266,154 +270,48 @@ svg {
   gap: 11px;
   margin-top: 34px;
 }
-.hero-art {
+.hero-portrait {
   position: relative;
-  height: 440px;
+  justify-self: end;
+  width: min(100%, 440px);
+  aspect-ratio: 1;
+  margin: 0;
   overflow: hidden;
   border: 1px solid #496162;
   border-radius: 10px;
   background: #102126;
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.22);
 }
-.hero-art-top,
-.hero-art-bottom {
-  height: 45px;
+.hero-portrait img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hero-portrait-caption {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 20px;
-  color: #a6b8b6;
-  font-family: ui-monospace, SFMono-Regular, monospace;
-  font-size: 9px;
-  letter-spacing: 0.13em;
+  gap: 12px;
+  padding: 18px 20px;
+  border-top: 1px solid rgba(200, 233, 226, 0.18);
+  background: rgba(7, 20, 23, 0.82);
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 800;
+  backdrop-filter: blur(10px);
 }
-.hero-art-top {
-  border-bottom: 1px solid #3c5353;
-}
-.hero-art-bottom {
-  border-top: 1px solid #3c5353;
-}
-.hero-art-bottom span:last-child {
-  font-size: 20px;
+.hero-portrait-caption span:last-child {
   color: var(--accent);
-}
-.window-dots {
-  display: flex;
-  gap: 5px;
-}
-.window-dots i {
-  display: block;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #809393;
-}
-.window-dots i:first-child {
-  background: var(--accent);
-}
-.hero-art-body {
-  position: relative;
-  height: 350px;
-  overflow: hidden;
-  background: radial-gradient(
-    circle at center,
-    rgba(184, 241, 104, 0.13),
-    transparent 44%
-  );
-}
-.hero-art-body:before,
-.hero-art-body:after {
-  content: "";
-  position: absolute;
-  background: #46615e;
-}
-.hero-art-body:before {
-  height: 1px;
-  left: 0;
-  right: 0;
-  top: 50%;
-}
-.hero-art-body:after {
-  width: 1px;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-}
-.art-ring {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  border: 1px solid #4a675b;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-}
-.art-ring-one {
-  width: 235px;
-  height: 235px;
-}
-.art-ring-two {
-  width: 350px;
-  height: 350px;
-  border-color: #314844;
-}
-.art-core {
-  position: absolute;
-  z-index: 1;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  display: grid;
-  place-items: center;
-  width: 145px;
-  height: 145px;
-  border: 1px solid var(--accent);
-  border-radius: 50%;
-  background: #182c29;
-  color: var(--accent);
-  box-shadow: 0 0 0 11px rgba(184, 241, 104, 0.04);
-}
-.art-label {
-  position: absolute;
-  z-index: 2;
-  padding: 7px 10px;
-  background: #1a302e;
-  border: 1px solid #63816c;
-  color: #ddf8c5;
   font-family: ui-monospace, SFMono-Regular, monospace;
   font-size: 10px;
-  letter-spacing: 0.07em;
-}
-.art-label-one {
-  left: 7%;
-  top: 21%;
-}
-.art-label-two {
-  right: 8%;
-  top: 30%;
-}
-.art-label-three {
-  left: 9%;
-  bottom: 20%;
-}
-.art-coordinate {
-  position: absolute;
-  right: 17px;
-  bottom: 16px;
-  color: #93aba6;
-  font-family: ui-monospace, SFMono-Regular, monospace;
-  font-size: 9px;
-  letter-spacing: 0.05em;
-}
-.hero-foot {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  padding: 18px 0 22px;
-  border-top: 1px solid #284047;
-  color: #80969a;
-  font-family: ui-monospace, SFMono-Regular, monospace;
-  font-size: 9px;
-  letter-spacing: 0.15em;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 .services-section,
 .portfolio-section,
@@ -1044,6 +942,51 @@ svg {
     font-size: clamp(46px, 5.3vw, 65px);
   }
 }
+@media (min-width: 1180px) {
+  .hero-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 400px);
+    gap: 48px;
+  }
+  .hero h1 {
+    max-width: none;
+    font-size: clamp(40px, 3.45vw, 48px);
+    white-space: nowrap;
+  }
+}
+@media (min-width: 801px) and (max-height: 700px) {
+  .hero {
+    padding-top: 18px;
+  }
+  .hero-grid {
+    min-height: 0;
+  }
+  .hero-content {
+    padding: 0;
+  }
+  .hero h1 {
+    margin: 12px 0 15px;
+    font-size: clamp(38px, 3.45vw, 48px);
+    line-height: 1.04;
+  }
+  .hero-lead {
+    margin-bottom: 9px;
+    font-size: clamp(17px, 1.65vw, 21px);
+    line-height: 1.35;
+  }
+  .hero-description {
+    font-size: 13px;
+    line-height: 1.55;
+  }
+  .hero-actions {
+    margin-top: 18px;
+  }
+  .hero-actions .button {
+    min-height: 44px;
+  }
+  .hero-portrait {
+    width: min(100%, 440px, calc(100svh - 160px));
+  }
+}
 @media (max-width: 800px) {
   .desktop-nav {
     display: none;
@@ -1099,26 +1042,8 @@ svg {
   .hero h1 {
     max-width: 700px;
   }
-  .hero-art {
-    height: 330px;
-  }
-  .hero-art-body {
-    height: 240px;
-  }
-  .art-ring-one {
-    width: 175px;
-    height: 175px;
-  }
-  .art-ring-two {
-    width: 260px;
-    height: 260px;
-  }
-  .art-core {
-    width: 110px;
-    height: 110px;
-  }
-  .hero-foot {
-    margin-top: 30px;
+  .hero-portrait {
+    justify-self: center;
   }
   .services-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1173,32 +1098,12 @@ svg {
     padding-inline: 12px;
     font-size: 12px;
   }
-  .hero-art {
-    height: 285px;
+  .hero-portrait-caption {
+    padding: 14px 16px;
+    font-size: 11px;
   }
-  .hero-art-body {
-    height: 195px;
-  }
-  .art-ring-one {
-    width: 150px;
-    height: 150px;
-  }
-  .art-ring-two {
-    width: 225px;
-    height: 225px;
-  }
-  .art-core {
-    width: 85px;
-    height: 85px;
-  }
-  .art-core svg {
-    width: 47px;
-  }
-  .art-label {
-    font-size: 8px;
-  }
-  .art-coordinate {
-    font-size: 7px;
+  .hero-portrait-caption span:last-child {
+    font-size: 9px;
   }
   .section-heading h2,
   .about-copy h2 {

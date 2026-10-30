@@ -1,4 +1,4 @@
-import { ArrowDownRight, Braces } from "lucide-react";
+import { ArrowDownRight } from "lucide-react";
 import ScrollButton from "./ScrollButton";
 
 function Hero() {
@@ -7,7 +7,7 @@ function Hero() {
       <div className="container hero-grid">
         <div className="hero-content">
           <p className="eyebrow">
-            <span className="eyebrow-line" /> SOFTWARE DEVELOPMENT · WORLDWIDE
+            <span className="eyebrow-line" /> SOFTWARE DEVELOPMENT
           </p>
           <h1>
             Ammad Fareed <span className="hero-divider">|</span>{" "}
@@ -30,38 +30,19 @@ function Hero() {
             </ScrollButton>
           </div>
         </div>
-        <div className="hero-art" aria-hidden="true">
-          <div className="hero-art-top">
-            <span className="window-dots">
-              <i />
-              <i />
-              <i />
-            </span>
-            <span>AMMAD / SOFTWARE</span>
-            <span>001</span>
-          </div>
-          <div className="hero-art-body">
-            <div className="art-ring art-ring-one" />
-            <div className="art-ring art-ring-two" />
-            <div className="art-core">
-              <Braces size={64} strokeWidth={1.1} />
-            </div>
-            <span className="art-label art-label-one">WEB & SAAS</span>
-            <span className="art-label art-label-two">MOBILE</span>
-            <span className="art-label art-label-three">AI SYSTEMS</span>
-            <div className="art-coordinate">
-              DESIGN&nbsp; / &nbsp;DEVELOP&nbsp; / &nbsp;DELIVER
-            </div>
-          </div>
-          <div className="hero-art-bottom">
-            <span>ENGINEERED FOR REAL-WORLD USE</span>
-            <span>↗</span>
-          </div>
-        </div>
-      </div>
-      <div className="container hero-foot">
-        <span>SCROLL TO EXPLORE</span>
-        <span>01 / 05</span>
+        <figure className="hero-portrait">
+          <img
+            src="/images/ammad-fareed-portrait.webp"
+            alt="Portrait of Ammad Fareed"
+            width="1000"
+            height="1000"
+            fetchPriority="high"
+          />
+          <figcaption className="hero-portrait-caption">
+            <span>Ammad Fareed</span>
+            <span>Software Developer</span>
+          </figcaption>
+        </figure>
       </div>
     </section>
   );
