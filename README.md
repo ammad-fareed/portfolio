@@ -25,7 +25,9 @@ npm run build
 npm run preview
 ```
 
-The production files are written to `dist/`. This project is prepared for local review; it has not been deployed.
+The production files are written to `dist/`. The live site is available at [ammadfareed.com](https://ammadfareed.com/), with `www.ammadfareed.com` serving the same portfolio.
+
+For Cloudflare Pages, use `npm run build` as the build command and `dist` as the output directory. Add `VITE_WEB3FORMS_ACCESS_KEY` to both the Production and Preview environment variables before redeploying.
 
 ## Content and configuration
 
@@ -39,11 +41,13 @@ The production files are written to `dist/`. This project is prepared for local 
 | SEO metadata                                                        | `index.html`, `public/robots.txt`, `public/sitemap.xml` |
 | Open Graph artwork                                                  | `public/og-image.png` (1200 × 630)                      |
 
-The displayed email address is `ammad.fareed786@gmail.com`, and the LinkedIn links point to Ammad Fareed's profile. The contact form reads its Web3Forms access key from the root `.env` file, which is ignored by source control.
+The displayed email address is `ammad@ammadfareed.com`, and the LinkedIn links point to Ammad Fareed's profile. The contact form reads its Web3Forms access key from the root `.env` file, which is ignored by source control.
 
 ### Contact form
 
-The form submits through `https://api.web3forms.com/submit` using `VITE_WEB3FORMS_ACCESS_KEY` from `.env`. It includes required fields, email validation, a hidden honeypot, duplicate-submission protection, loading state, and success/error feedback. For deployment, set the same variable in the hosting provider's build settings and rebuild. Vite embeds all `VITE_` variables into the browser bundle; Web3Forms access keys are browser-visible by design. Never put private API tokens or passwords in these variables.
+The form submits through `https://api.web3forms.com/submit` using `VITE_WEB3FORMS_ACCESS_KEY` from `.env`. It includes required fields, email validation, a hidden honeypot, duplicate-submission protection, loading state, success/error feedback, and submission metadata identifying `ammadfareed.com`.
+
+The Web3Forms access key determines the inbox that receives submissions. Generate and verify a key for `ammad@ammadfareed.com`, replace the local value in `.env`, then add the same variable in Cloudflare Pages under **Settings → Environment variables** for Production and Preview. Redeploy after changing the Cloudflare value. Vite embeds all `VITE_` variables into the browser bundle, and Web3Forms documents its access keys as public browser identifiers rather than secret API keys. Never store private API tokens or passwords in `VITE_` variables.
 
 ### Project images
 

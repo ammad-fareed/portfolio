@@ -68,9 +68,12 @@ export default function ContactForm() {
         },
         body: JSON.stringify({
           access_key: site.web3formsAccessKey,
+          subject: "New portfolio inquiry — ammadfareed.com",
+          from_name: "Ammad Fareed Portfolio",
           name: values.name.trim(),
           email: values.email.trim(),
           message: values.details.trim(),
+          source: site.url,
           botcheck: "",
         }),
       });
