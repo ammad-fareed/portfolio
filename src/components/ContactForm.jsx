@@ -1,5 +1,5 @@
-import { useRef, useState } from "react";
-import { ArrowUpRight, Send } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { ArrowUpRight, Send, X } from "lucide-react";
 import { site } from "../config/site";
 
 const initialValues = { name: "", email: "", details: "", botcheck: "" };
@@ -21,6 +21,15 @@ export default function ContactForm() {
   const [status, setStatus] = useState({ type: "", message: "" });
   const [submitting, setSubmitting] = useState(false);
   const formRef = useRef(null);
+
+  useEffect(() => {
+    if (!status.message) return;
+    const timer = window.setTimeout(
+      () => setStatus({ type: "", message: "" }),
+      5000,
+    );
+    return () => window.clearTimeout(timer);
+  }, [status]);
 
   const update = (event) => {
     const { name, value } = event.target;
@@ -184,6 +193,14 @@ export default function ContactForm() {
               Email Ammad <ArrowUpRight size={14} aria-hidden="true" />
             </a>
           )}
+          <button
+            className="form-status-dismiss"
+            type="button"
+            aria-label="Dismiss message"
+            onClick={() => setStatus({ type: "", message: "" })}
+          >
+            <X size={16} aria-hidden="true" />
+          </button>
         </div>
       )}
     </form>

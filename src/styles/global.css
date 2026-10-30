@@ -912,8 +912,9 @@ svg {
   cursor: wait;
 }
 .form-status {
+  position: relative;
   margin-top: 15px;
-  padding: 12px 14px;
+  padding: 12px 42px 12px 14px;
   border-radius: 5px;
   font-size: 12px;
   line-height: 1.6;
@@ -932,6 +933,24 @@ svg {
   gap: 4px;
   margin-left: 5px;
   text-decoration: underline;
+}
+.form-status-dismiss {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: inherit;
+  opacity: 0.8;
+}
+.form-status-dismiss:hover {
+  background: rgba(255, 255, 255, 0.1);
+  opacity: 1;
 }
 .site-footer {
   padding: 60px 0 24px;
