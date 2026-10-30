@@ -1,0 +1,81 @@
+export const projects = [
+  {
+    name: "JK Financial",
+    category: "FINANCIAL TECHNOLOGY",
+    color: "green",
+    url: "https://app.jk.financial/",
+    description:
+      "A commercial solar finance workspace with cash-flow and savings analysis, project status tracking, document management, digital signatures, and team workflows.",
+    technologies: ["Ruby on Rails", "PostgreSQL", "SignNow API"],
+    image: "/images/projects/jk-financial/jk1.webp",
+    imageAlt: "JK Financial dashboard with project filters and overview cards",
+    imageWidth: 1440,
+    imageHeight: 679,
+  },
+  {
+    name: "TheCarBlock",
+    category: "AUTOMOTIVE MARKETPLACE",
+    color: "amber",
+    url: "https://thecarblock.com/",
+    description:
+      "A dealer network and vehicle marketplace with inventory workflows, Ship.Cars platform API integration, and Stripe escrow payment handling.",
+    technologies: [
+      "Next.js",
+      "Supabase",
+      "Ship.Cars API",
+      "Stripe",
+      "Escrow Payments",
+    ],
+    image: "/images/projects/thecarblock/carb1.webp",
+    imageAlt: "CarBlock website homepage introducing its dealer network",
+    imageWidth: 1440,
+    imageHeight: 1038,
+  },
+  {
+    name: "Admittedly",
+    category: "COUNSELING / EDUCATION",
+    color: "violet",
+    url: "https://admittedly.co/",
+    description:
+      "A college admissions counseling platform with student guidance, application strategy, and essay support.",
+    technologies: [
+      "Ruby on Rails",
+      "PostgreSQL",
+      "Clerk",
+      "HubSpot",
+      "Zoom API",
+      "Calendly",
+    ],
+    image: "/images/projects/admittedly/admittedly.webp",
+    imageAlt:
+      "Admittedly public website homepage with college admissions guidance",
+    imageWidth: 1440,
+    imageHeight: 591,
+  },
+  {
+    name: "Brainio",
+    category: "PRODUCTIVITY SOFTWARE",
+    color: "sand",
+    url: "https://brainio.com/",
+    description:
+      "A Markdown-powered notepad that turns notes into visual mind maps and helps connect ideas.",
+    technologies: [],
+    image: "/images/projects/brainio/brainio.webp",
+    imageAlt: "Brainio homepage introducing its visual notepad",
+    imageWidth: 1440,
+    imageHeight: 630,
+  },
+  {
+    name: "TrueClaim.ai",
+    category: "AI / SAAS",
+    color: "blue",
+    url: "https://www.trueclaim.ai/",
+    description:
+      "An AI collision estimating platform that helps repair shops build complete repair plans, capture overlooked billable operations, and reduce supplements.",
+    technologies: ["Ruby on Rails", "PostgreSQL", "REST APIs", "AI/LLM"],
+    image: "/images/projects/trueclaim/trueclaim.webp",
+    imageAlt: "Trueclaim homepage highlighting faster collision estimates",
+    imageWidth: 1440,
+    imageHeight: 638,
+  },
+];

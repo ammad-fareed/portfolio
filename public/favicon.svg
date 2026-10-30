@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">Ammad Fareed monogram</title>
+  <rect x="1" y="1" width="62" height="62" rx="13" fill="#102126" stroke="#5c8176" stroke-width="2"/>
+  <path d="M10 46 22.5 18 35 46M16 34h13" fill="none" stroke="#eef4f5" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M40 46V18h14M40 31h11" fill="none" stroke="#b8f168" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
