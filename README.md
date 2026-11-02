@@ -36,7 +36,7 @@ For Cloudflare Pages, use `npm run build` as the build command and `dist` as the
 | Biography and skill groups                                          | `src/components/About.jsx`                              |
 | Service titles and descriptions                                     | `src/data/services.js`                                  |
 | Project names, order, descriptions, links, badges, and image status | `src/data/projects.js`                                  |
-| Contact email and LinkedIn profile                                  | `src/config/site.js`                                    |
+| Contact email, meeting booking URL, and LinkedIn profile             | `src/config/site.js`                                    |
 | Colors and layouts                                                  | `src/styles/global.css`                                 |
 | SEO metadata                                                        | `index.html`, `public/robots.txt`, `public/sitemap.xml` |
 | Open Graph artwork                                                  | `public/og-image.png` (1200 × 630)                      |
@@ -48,6 +48,12 @@ The displayed email address is `ammad@ammadfareed.com`, and the LinkedIn links p
 The form submits through `https://api.web3forms.com/submit` using `VITE_WEB3FORMS_ACCESS_KEY` from `.env`. It includes required fields, email validation, a hidden honeypot, duplicate-submission protection, loading state, success/error feedback, and submission metadata identifying `ammadfareed.com`.
 
 The Web3Forms access key determines the inbox that receives submissions. Generate and verify a key for `ammad@ammadfareed.com`, replace the local value in `.env`, then add the same variable in Cloudflare Pages under **Settings → Environment variables** for Production and Preview. Redeploy after changing the Cloudflare value. Vite embeds all `VITE_` variables into the browser bundle, and Web3Forms documents its access keys as public browser identifiers rather than secret API keys. Never store private API tokens or passwords in `VITE_` variables.
+
+### Meeting bookings
+
+The hero and contact section use the shared `BookingLink` component. Both buttons open `site.bookingUrl` in a new tab with `noopener noreferrer`. The public Google Calendar appointment link is configured in `src/config/site.js`; it requires no API keys, OAuth credentials, backend, or additional dependencies.
+
+Manage the 30-minute meeting duration, available hours, timezone, conflict checks, and meeting location in the Google Calendar appointment schedule. Visitors select an available slot and complete their booking on Google's hosted page. Changes to availability are managed in Google Calendar; update `site.bookingUrl` only when replacing the booking page.
 
 ### Project images
 

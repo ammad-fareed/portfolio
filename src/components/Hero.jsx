@@ -1,5 +1,6 @@
 import { ArrowDownRight } from "lucide-react";
 import ScrollButton from "./ScrollButton";
+import BookingLink from "./BookingLink";
 
 function Hero() {
   return (
@@ -22,6 +23,7 @@ function Hero() {
             turn ideas into reliable, scalable software.
           </p>
           <div className="hero-actions">
+            <BookingLink />
             <ScrollButton
               className="button button-outline"
               targetId="portfolio"

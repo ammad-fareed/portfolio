@@ -2,6 +2,7 @@ import { ArrowUpRight, Mail } from "lucide-react";
 import { site } from "../config/site";
 import ContactForm from "./ContactForm";
 import LinkedInIcon from "./LinkedInIcon";
+import BookingLink from "./BookingLink";
 
 function Contact() {
   return (
@@ -22,6 +23,9 @@ function Contact() {
             <Mail size={19} aria-hidden="true" /> {site.email}{" "}
             <ArrowUpRight size={18} aria-hidden="true" />
           </a>
+          <div className="contact-booking">
+            <BookingLink />
+          </div>
           <div className="contact-links">
             <a
               href={site.linkedinUrl}
