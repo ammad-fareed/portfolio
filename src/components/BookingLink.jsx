@@ -8,7 +8,7 @@ export default function BookingLink() {
       href={site.bookingUrl}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Book a Meeting (opens Google Calendar in a new tab)"
+      aria-label="Book a Meeting (opens Calendly in a new tab)"
     >
       <CalendarDays size={18} aria-hidden="true" />
       Book a Meeting

@@ -51,9 +51,9 @@ The Web3Forms access key determines the inbox that receives submissions. Generat
 
 ### Meeting bookings
 
-The hero and contact section use the shared `BookingLink` component. Both buttons open `site.bookingUrl` in a new tab with `noopener noreferrer`. The public Google Calendar appointment link is configured in `src/config/site.js`; it requires no API keys, OAuth credentials, backend, or additional dependencies.
+The hero and contact section use the shared `BookingLink` component. Both buttons open `site.bookingUrl` in a new tab with `noopener noreferrer`. The public Calendly booking link, `https://calendly.com/ammad-fareed/30min`, is configured in `src/config/site.js`; it requires no API keys, OAuth credentials, backend, or additional dependencies.
 
-Manage the 30-minute meeting duration, available hours, timezone, conflict checks, and meeting location in the Google Calendar appointment schedule. Visitors select an available slot and complete their booking on Google's hosted page. Changes to availability are managed in Google Calendar; update `site.bookingUrl` only when replacing the booking page.
+Manage the 30-minute meeting duration, available hours, timezone, connected calendars, and meeting location in Calendly. Visitors select an available slot and complete their booking on Calendly's hosted page. Changes to availability are managed in Calendly; update `site.bookingUrl` only when replacing the booking page.
 
 ### Project images
 
