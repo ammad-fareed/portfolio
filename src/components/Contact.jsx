@@ -1,7 +1,7 @@
 import { ArrowUpRight, Mail } from "lucide-react";
 import { site } from "../config/site";
 import ContactForm from "./ContactForm";
-import LinkedInIcon from "./LinkedInIcon";
+import SocialLinks from "./SocialLinks";
 import BookingLink from "./BookingLink";
 
 function Contact() {
@@ -20,24 +20,23 @@ function Contact() {
             solve? Tell me what you're building.
           </p>
           <a className="contact-email" href={`mailto:${site.email}`}>
-            <Mail size={19} aria-hidden="true" /> {site.email}{" "}
+            <Mail size={19} aria-hidden="true" />
+            <span>{site.email}</span>
             <ArrowUpRight size={18} aria-hidden="true" />
           </a>
           <div className="contact-booking">
             <BookingLink />
           </div>
           <div className="contact-links">
-            <a
-              href={site.linkedinUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <LinkedInIcon size={16} aria-hidden="true" />
-              LinkedIn <ArrowUpRight size={16} aria-hidden="true" />
-            </a>
+            <SocialLinks />
           </div>
         </div>
-        <ContactForm />
+        <div className="contact-form-area">
+          <ContactForm />
+          <p className="contact-privacy">
+            I use your details only to reply to your inquiry.
+          </p>
+        </div>
       </div>
     </section>
   );

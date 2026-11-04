@@ -1,6 +1,6 @@
 # Ammad Fareed — Software Developer
 
-A responsive, single-page portfolio for Ammad Fareed. It introduces his web, mobile, SaaS, and AI development services and presents five selected projects. The site is a static React frontend; it has no backend or database.
+A responsive, single-page portfolio for Ammad Fareed. It introduces his web, mobile, SaaS, and AI development services and presents six selected projects. The site is a static React frontend; it has no backend or database.
 
 ## Stack and requirements
 
@@ -36,12 +36,12 @@ For Cloudflare Pages, use `npm run build` as the build command and `dist` as the
 | Biography and skill groups                                          | `src/components/About.jsx`                              |
 | Service titles and descriptions                                     | `src/data/services.js`                                  |
 | Project names, order, descriptions, links, badges, and image status | `src/data/projects.js`                                  |
-| Contact email, meeting booking URL, and LinkedIn profile             | `src/config/site.js`                                    |
+| Contact email, meeting booking URL, and social profiles              | `src/config/site.js`                                    |
 | Colors and layouts                                                  | `src/styles/global.css`                                 |
 | SEO metadata                                                        | `index.html`, `public/robots.txt`, `public/sitemap.xml` |
 | Open Graph artwork                                                  | `public/og-image.png` (1200 × 630)                      |
 
-The displayed email address is `ammad@ammadfareed.com`, and the LinkedIn links point to Ammad Fareed's profile. The contact form reads its Web3Forms access key from the root `.env` file, which is ignored by source control.
+The displayed email address is `ammad@ammadfareed.com`. LinkedIn, Upwork, and GitHub profiles are configured centrally and shared by the contact section and footer; each opens in a new tab with `noopener`. The contact form reads its Web3Forms access key from the root `.env` file, which is ignored by source control.
 
 ### Contact form
 
@@ -57,7 +57,9 @@ Manage the 30-minute meeting duration, available hours, timezone, conflict check
 
 ### Project images
 
-All five project cards use one owner-supplied screenshot, optimized as WebP under `public/images/projects/`. Admittedly links to `https://admittedly.co/`, Brainio links to `https://brainio.com/`, and TrueClaim.ai links to `https://www.trueclaim.ai/`. To add or replace a card image, set `image`, `imageAlt`, `imageWidth`, and `imageHeight` in `src/data/projects.js`.
+All six project cards use their original owner-supplied screenshots, optimized as WebP under `public/images/projects/`. Every image area uses compact 1440:620 proportions. Screenshots fit completely inside the shared frame with `object-fit: contain`, preserving their proportions without cropping or stretching. Background space may appear around images with different proportions. Grid rows have equal heights and technology tags align toward the bottom. Muawza uses `public/images/projects/muawza/muawza.webp`, optimized from the supplied `M1.png`, and links to `https://www.muawza.com/`. Admittedly links to `https://admittedly.co/`, Brainio links to `https://brainio.com/`, and TrueClaim.ai links to `https://www.trueclaim.ai/`. To add or replace a card image, set `image`, `imageAlt`, `imageWidth`, and `imageHeight` in `src/data/projects.js`.
+
+The hero keeps the existing square, 1000 × 1000 portrait at `public/images/ammad-fareed-portrait.webp`, with the alt text “Ammad Fareed, software developer.”
 
 ## Outstanding review
 

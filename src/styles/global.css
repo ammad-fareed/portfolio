@@ -71,6 +71,14 @@ svg {
   width: min(var(--container), calc(100% - 40px));
   margin-inline: auto;
 }
+.hero-grid > *,
+.services-grid > *,
+.projects-grid > *,
+.about-grid > *,
+.contact-grid > *,
+.footer-top > * {
+  min-width: 0;
+}
 .section {
   scroll-margin-top: 80px;
 }
@@ -287,6 +295,7 @@ svg {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
 }
 .hero-portrait-caption {
   position: absolute;
@@ -294,6 +303,7 @@ svg {
   bottom: 0;
   left: 0;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
@@ -421,9 +431,12 @@ svg {
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-auto-rows: 1fr;
   gap: 23px;
 }
 .project-card {
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
   border: 1px solid #263b40;
   border-radius: 10px;
@@ -441,7 +454,8 @@ svg {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  aspect-ratio: 1.78;
+  aspect-ratio: 1440 / 620;
+  flex-shrink: 0;
   overflow: hidden;
   padding: 20px 22px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
@@ -462,6 +476,7 @@ svg {
   background-size: 46px 46px;
 }
 .project-visual-image {
+  display: block;
   padding: 0;
   background: #0b1018;
 }
@@ -469,10 +484,13 @@ svg {
   content: none;
 }
 .project-visual-image img {
+  position: absolute;
+  inset: 0;
   display: block;
   width: 100%;
   height: 100%;
   object-fit: contain;
+  object-position: center;
 }
 .visual-blue {
   background: #133950;
@@ -534,6 +552,9 @@ svg {
   word-break: break-word;
 }
 .project-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
   padding: 26px 28px 25px;
 }
 .project-head {
@@ -571,9 +592,6 @@ svg {
   background: var(--accent);
   color: var(--bg);
 }
-.project-link-muted {
-  opacity: 0.3;
-}
 .project-content > p {
   margin: 0 0 18px;
   color: #a9babe;
@@ -585,15 +603,18 @@ svg {
   display: flex;
   flex-wrap: wrap;
   gap: 7px;
+  margin-top: auto;
 }
 .project-tags span,
 .skill-row span {
+  max-width: 100%;
   padding: 6px 9px;
   border: 1px solid #385056;
   border-radius: 4px;
   color: #bdcbcd;
   font-size: 10px;
   font-weight: 700;
+  overflow-wrap: anywhere;
 }
 .about-section {
   background: #0c191e;
@@ -613,17 +634,6 @@ svg {
   font-size: 14px;
   line-height: 1.9;
 }
-.text-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 18px;
-  padding-bottom: 7px;
-  border-bottom: 1px solid var(--accent);
-  color: var(--accent);
-  font-size: 13px;
-  font-weight: 800;
-}
 .skills-panel {
   padding: 25px 28px 4px;
   border: 1px solid #355058;
@@ -642,7 +652,7 @@ svg {
 }
 .skill-row {
   display: grid;
-  grid-template-columns: 115px 1fr;
+  grid-template-columns: 115px minmax(0, 1fr);
   gap: 14px;
   padding: 18px 0;
   border-bottom: 1px solid #2d464c;
@@ -689,6 +699,7 @@ svg {
 }
 .contact-email {
   display: inline-flex;
+  max-width: 100%;
   align-items: center;
   gap: 11px;
   margin-top: 31px;
@@ -697,6 +708,12 @@ svg {
   font-weight: 800;
   letter-spacing: -0.025em;
   overflow-wrap: anywhere;
+}
+.contact-email svg {
+  flex: none;
+}
+.contact-email span {
+  min-width: 0;
 }
 .contact-email svg:first-child {
   color: var(--accent);
@@ -715,22 +732,31 @@ svg {
 }
 .contact-links {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   align-items: flex-start;
-  gap: 12px;
+  gap: 8px 20px;
   margin-top: 29px;
 }
 .contact-links a {
   display: inline-flex;
+  min-height: 44px;
   gap: 8px;
   align-items: center;
   color: var(--accent);
   font-size: 12px;
   font-weight: 800;
 }
-.contact-links span {
-  color: #8ea3a4;
-  font-size: 11px;
+.contact-links a svg {
+  flex: none;
+}
+.contact-form-area {
+  max-width: 700px;
+}
+.contact-privacy {
+  margin: 12px 4px 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.7;
 }
 .contact-form {
   padding: 28px;
@@ -866,7 +892,7 @@ svg {
 }
 .footer-top {
   display: grid;
-  grid-template-columns: 1.6fr 1fr 1fr;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr) minmax(0, 1fr);
   gap: 35px;
   padding-bottom: 60px;
 }
@@ -912,6 +938,7 @@ svg {
 }
 .footer-contact a {
   display: inline-flex;
+  max-width: 100%;
   align-items: center;
   gap: 8px;
   overflow-wrap: anywhere;
@@ -997,6 +1024,10 @@ svg {
   }
 }
 @media (max-width: 800px) {
+  .footer-top nav button,
+  .footer-contact a {
+    min-height: 44px;
+  }
   .desktop-nav {
     display: none;
   }

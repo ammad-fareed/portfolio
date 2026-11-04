@@ -18,7 +18,7 @@ function ProjectCard({ project, index, total }) {
         <div
           className={`project-visual visual-${project.color}`}
           role="img"
-          aria-label={`Text-based visual placeholder for ${project.name}; approved screenshot pending`}
+          aria-label={`${project.name} — ${project.category}`}
         >
           <span className="visual-top">
             <span>AF / SELECTED WORK</span>
@@ -32,8 +32,7 @@ function ProjectCard({ project, index, total }) {
             {project.visualName || project.name}
           </span>
           <span className="visual-bottom">
-            PROJECT IMAGE PENDING APPROVAL{" "}
-            <ArrowUpRight size={15} aria-hidden="true" />
+            {project.category}
           </span>
         </div>
       )}
@@ -53,14 +52,7 @@ function ProjectCard({ project, index, total }) {
             >
               <ArrowUpRight size={22} aria-hidden="true" />
             </a>
-          ) : (
-            <span
-              className="project-link project-link-muted"
-              title="Project website link awaiting verification"
-            >
-              <ArrowUpRight size={22} aria-hidden="true" />
-            </span>
-          )}
+          ) : null}
         </div>
         <p>{project.description}</p>
         {project.technologies.length > 0 && (

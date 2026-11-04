@@ -1,7 +1,7 @@
-import { ArrowUpRight, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
 import { navigation } from "../data/navigation";
 import { site } from "../config/site";
-import LinkedInIcon from "./LinkedInIcon";
+import SocialLinks from "./SocialLinks";
 import ScrollButton from "./ScrollButton";
 
 const copyrightYear = new Date().getFullYear();
@@ -35,14 +35,7 @@ function Footer() {
               <Mail size={15} aria-hidden="true" />
               <span>{site.email}</span>
             </a>
-            <a
-              href={site.linkedinUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <LinkedInIcon size={15} aria-hidden="true" />
-              LinkedIn <ArrowUpRight size={14} aria-hidden="true" />
-            </a>
+            <SocialLinks iconSize={15} />
           </div>
         </div>
         <div className="footer-bottom">

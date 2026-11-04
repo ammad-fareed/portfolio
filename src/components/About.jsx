@@ -1,5 +1,4 @@
-import { ArrowUpRight, Layers3 } from "lucide-react";
-import ScrollButton from "./ScrollButton";
+import { Layers3 } from "lucide-react";
 
 const skillGroups = [
   ["Backend", "Ruby on Rails", "Node.js", "Python", "FastAPI"],
@@ -39,9 +38,6 @@ function About() {
               project.
             </p>
           </div>
-          <ScrollButton className="text-link" targetId="contact">
-            Let's work together <ArrowUpRight size={18} aria-hidden="true" />
-          </ScrollButton>
         </div>
         <div className="skills-panel">
           <div className="skills-panel-head">

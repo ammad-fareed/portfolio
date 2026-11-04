@@ -35,10 +35,11 @@ function Hero() {
         <figure className="hero-portrait">
           <img
             src="/images/ammad-fareed-portrait.webp"
-            alt="Portrait of Ammad Fareed"
+            alt="Ammad Fareed, software developer."
             width="1000"
             height="1000"
             fetchPriority="high"
+            decoding="async"
           />
           <figcaption className="hero-portrait-caption">
             <span>Ammad Fareed</span>

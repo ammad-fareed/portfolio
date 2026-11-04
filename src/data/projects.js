@@ -78,4 +78,18 @@ export const projects = [
     imageWidth: 1440,
     imageHeight: 638,
   },
+  {
+    name: "Muawza",
+    category: "MOBILE & WEB",
+    color: "coral",
+    url: "https://www.muawza.com/",
+    description:
+      "A platform that connects customers with nearby service professionals, with a mobile app and backend built on React Native, Node.js, Firebase, MongoDB, and AWS.",
+    technologies: ["React Native", "Node.js", "Firebase", "MongoDB", "AWS"],
+    image: "/images/projects/muawza/muawza.webp",
+    imageAlt:
+      "Muawza homepage for service providers featuring a professional with a tool belt",
+    imageWidth: 1440,
+    imageHeight: 638,
+  },
 ];
